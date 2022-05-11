@@ -13,6 +13,8 @@
     border: 2px;
     width: 400px;
     font-family: inherit;
+    font-weight: bold;
+    font-size: large;
 }
 .answer:hover {
     color:black;

@@ -3,30 +3,15 @@ import "./App.css";
 import { Component } from "react";
 
 /* React Imports */
-import FlashCard from "./Components/FlashCard";
-import BottomBar from "./Components/BottomBar";
+import FlashCard from "./Components/FlashCard/FlashCard";
+import BottomBar from "./Components/UI/BottomBar";
 
 /* Main App */
 const App = () => {
   const qnas = [
-    {
-      id: 0,
-      qn: "What Does the Fox Say?",
-      ans: "HELLO I AM A FOX",
-      date: new Date(2022, 5, 1),
-    },
-    {
-      id: 1,
-      qn: "What Does the Chicken Say?",
-      ans: "POK POK POK",
-      date: new Date(2022, 5, 2),
-    },
-    {
-      id: 2,
-      qn: "What Does the Dog Say?",
-      ans: "WOOF WOOF <3",
-      date: new Date(2022, 5, 3),
-    },
+    {id: 0, qn: "What Does the Fox Say?", ans: "HELLO I AM A FOX", date: new Date(2022, 5, 1), },
+    {id: 1, qn: "What Does the Chicken Say?", ans: "POK POK POK", date: new Date(2022, 5, 2), },
+    {id: 2, qn: "What Does the Dog Say?", ans: "WOOF WOOF <3", date: new Date(2022, 5, 3), },
   ];
 
   return (

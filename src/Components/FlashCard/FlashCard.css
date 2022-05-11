@@ -1,8 +1,8 @@
 .flash-card {
   display: flex;
   flex-direction: column;
-  background-color: #6e7271;
-  color: white;
+  background-color: #EEE;
+  color: #000;
   align-items: center;
   scroll-snap-align: center;
   width: 100%;
@@ -14,13 +14,14 @@
   margin-top: 20%;
   margin-bottom: 20%;
   position: relative;
+  border: 8px solid #9C3848 ;
   box-shadow: 0.5rem 0.5rem 0 black;
 }
 
 .date-added {
   align-self: flex-end;
   padding-top: 3rem;
-  color: #fff;
+  color: #000;
   font-family: inherit;
   font-weight: 400;
 }
