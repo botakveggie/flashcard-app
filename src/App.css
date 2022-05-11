@@ -16,16 +16,28 @@
 
 .App-header {
   background-color: #282c34;
-  display: flexbox;
+  /* display:flex; */
   /* min-height: 4rem; */
   width: 98%;
   align-items: center;
+  justify-items: center;
   justify-content: center;
   padding: 1rem 0 1rem 0;
-  font-size: calc(10px + 2vmin);
   color: white;
   position: fixed;
   z-index: 1;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.App-header-main {
+  font-family: inherit;
+  font-size: large;
+  font-weight: bold;
+  font-size: calc(10px + 2vmin);
+}
+
+.App-header-instructions {
+  font-family: inherit;
 }
 
 .App-link {
