@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  overflow:hidden;
 }
 
 .App-logo {
@@ -15,13 +16,16 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  display: flexbox;
+  /* min-height: 4rem; */
+  width: 98%;
   align-items: center;
   justify-content: center;
+  padding: 1rem 1rem 1rem 1rem;
   font-size: calc(10px + 2vmin);
   color: white;
+  position: fixed;
+  z-index: 1;
 }
 
 .App-link {
@@ -35,4 +39,9 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.main {
+  overflow:hidden;
+  /* border:#282c34 solid 1rem;   */
 }

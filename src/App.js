@@ -18,7 +18,7 @@ const App = () => {
     <div>
       <div className="App">
         <div className="main">
-          <h1>Hello World!</h1>
+          <div className="App-header">Hello World!</div>
 
           <FlashCard qn={qnas[0].qn} ans={qnas[0].ans} date={qnas[0].date} />
           <FlashCard qn={qnas[1].qn} ans={qnas[1].ans} date={qnas[1].date} />
