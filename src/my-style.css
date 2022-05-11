@@ -1,0 +1,24 @@
+* {
+    margin: center;
+    padding: 0;
+    overflow: hidden;
+    font-family: Helvetica;
+}
+
+h1 {text-align: center}
+/* 
+.App {
+    overflow: hidden;
+} */
+
+.main {
+    
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+}
+
+section {
+    position: relative;
+    scroll-snap-align: center;
+}

@@ -1,0 +1,30 @@
+.flash-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #6e7271;
+  color: white;
+  align-items: center;
+  scroll-snap-align: center;
+  width: 100%;
+  max-width: 600px;
+  height: 30%;
+  min-height: 18rem;
+  padding: 10px 1rem;
+  margin: auto;
+  margin-top: 20%;
+  margin-bottom: 20%;
+  position: relative;
+  box-shadow: 0.5rem 0.5rem 0 black;
+}
+
+.date-added {
+  align-self: flex-end;
+  padding-top: 3rem;
+  color: #fff;
+  font-family: inherit;
+  font-weight: 400;
+}
+
+h2 {
+  font-family: inherit;
+}
