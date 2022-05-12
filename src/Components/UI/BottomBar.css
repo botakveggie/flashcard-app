@@ -30,10 +30,7 @@
 	padding-top: 16px;
 	padding-bottom: 16px;
     cursor: pointer;
-}
-
-.Spacing {
-    width: 5%;
+    margin:0 2rem 0 2rem;
 }
 
 .btn-1 {
@@ -43,7 +40,7 @@
 }
 
 .btn-1:hover {
-    box-shadow: inset 50rem 0 0 0 #074697;
+    box-shadow: inset 0 0 0 10rem #074697;
     color: #FFFFFF;
 }
 
@@ -54,6 +51,6 @@
 }
 
 .btn-2:hover {
-    box-shadow: inset 50rem 0 0 0 #9C3848;
+    box-shadow: inset 0 0 0 10rem #9C3848;
     color: #FFFFFF;
 }

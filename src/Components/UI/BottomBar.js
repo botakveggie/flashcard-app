@@ -1,15 +1,13 @@
+import BlueButton from "./BlueButton";
+import DeleteButton from "./DeleteButton";
+import AddNewButton from "./AddNewButton";
 import "./BottomBar.css";
 
 const BottomBar = () => {
   return (
     <div className="bottom-bar">
-      <div className="btn-1 bottom-bar-element">
-        <span>Add New</span>
-      </div>
-      <div className="Spacing" />
-      <div className="btn-2 bottom-bar-element">
-        <span>Delete</span>
-      </div>
+      <AddNewButton className="btn-1 bottom-bar-element" buttonName='Add New' />
+      <DeleteButton className="btn-2 bottom-bar-element" buttonName='Delete' />
     </div>
   );
 }

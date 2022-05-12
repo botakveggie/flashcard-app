@@ -5,6 +5,7 @@ import { Component } from "react";
 /* React Imports */
 import FlashCard from "./Components/FlashCard/FlashCard";
 import BottomBar from "./Components/UI/BottomBar";
+import NewFlashCard from "./Components/UI/NewFlashCard";
 
 /* Main App */
 const App = () => {
@@ -37,7 +38,7 @@ const App = () => {
             <div className="App-header-main">Hello World!</div>
             <div className="App-header-instructions">Use ↑ and ↓ to move!</div>
           </div>
-
+          <NewFlashCard />
           <FlashCard qn={qnas[0].qn} ans={qnas[0].ans} date={qnas[0].date} />
           <FlashCard qn={qnas[1].qn} ans={qnas[1].ans} date={qnas[1].date} />
           <FlashCard qn={qnas[2].qn} ans={qnas[2].ans} date={qnas[2].date} />
