@@ -1,0 +1,13 @@
+.MainPage {
+    overflow:hidden;
+    font-family: inherit;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    scroll-snap-align: start;
+    height: 100vh
+    /* border:#282c34 solid 1rem;   */
+  }
+/* 
+* {
+    font-family: inherit;
+} */

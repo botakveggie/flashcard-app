@@ -1,23 +1,49 @@
+import { useState } from "react";
+import BlueButton from "./BlueButton";
 import "./NewFlashCardForm.css";
 
-const NewFlashCardForm = () => {
+const NewFlashCardForm = (props) => {
+  const [enteredQuestion, setEnteredQuestion] = useState("");
+  const [enteredAnswer, setEnteredAnswer] = useState("");
+  const questionChangeHandler = (event) => {
+    setEnteredQuestion(event.target.value);
+  };
+  const answerChangeHandler = (event) => {
+    setEnteredAnswer(event.target.value);
+  };
+
+  const submitHandler = (event) => {
+    event.preventDefault();
+
+    const flashcardData = {
+      question: enteredQuestion,
+      answer: enteredAnswer,
+      date: new Date()
+    };
+    // console.log(flashcardData);
+    props.onSaveFormData(flashcardData);
+    setEnteredQuestion('');
+    setEnteredAnswer('');
+  };
+
   // console.log("new form")
   return (
-      <form>
-        <div className="form__controls">
-          <div className="form__control">
-            <label>Question</label>
-            <input type="text" />
-          </div>
-          <div className="form__control">
-            <label>Answer</label>
-            <input type="text" />
-          </div>
+    <form onSubmit={submitHandler}>
+      <h1>New FlashCard! 😊 </h1>
+      <div className="form__controls">
+        <div className="form__control">
+          <label>Question</label>
+          <input type="text" value={enteredQuestion} onChange={questionChangeHandler} />
         </div>
-        <div className="new-flashcard__actions">
-          <button type="submit">Add FlashCard</button>
+        <div className="form__control">
+          <label>Answer</label>
+          <input type="text" value={enteredAnswer} onChange={answerChangeHandler} />
         </div>
-      </form>
+      </div>
+      <div className="new-flashcard__actions">
+        <BlueButton type="submit">Add FlashCard</BlueButton>
+      </div>
+    </form>
   );
 };
 

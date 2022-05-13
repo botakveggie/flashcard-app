@@ -1,6 +1,11 @@
 .App {
   text-align: center;
-  overflow:hidden;
+  font-family: 'Courier New', Courier, monospace;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  /* scroll-snap-type: y mandatory; */
+  /* overflow:hidden; */
 }
 
 .App-logo {
@@ -19,6 +24,7 @@
   /* display:flex; */
   /* min-height: 4rem; */
   width: 98%;
+  align-self: flex-start;
   align-items: center;
   justify-items: center;
   justify-content: center;
@@ -55,5 +61,14 @@
 
 .main {
   overflow:hidden;
+  font-family: inherit;
+  scroll-snap-type: y mandatory;
+  display: flex;
+  flex-direction: column;
+  /* scroll-snap-align: center; */
+  /* scroll-behavior: smooth; */
   /* border:#282c34 solid 1rem;   */
 }
+/* .main > div {
+  scroll-snap-align: center;
+} */

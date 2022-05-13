@@ -1,11 +1,12 @@
 import logo from "./logo.svg";
 import "./App.css";
-import { Component } from "react";
+import { Component, useState } from "react";
 
 /* React Imports */
 import FlashCard from "./Components/FlashCard/FlashCard";
 import BottomBar from "./Components/UI/BottomBar";
 import NewFlashCard from "./Components/UI/NewFlashCard";
+import MainPage from "./Components/UI/MainPage";
 
 /* Main App */
 const App = () => {
@@ -29,22 +30,34 @@ const App = () => {
       date: new Date(2022, 5, 3),
     },
   ];
+  const addFlashCardHandler = (flashCardData) => {
+    console.log(flashCardData);
+  };
+  const [seen, setSeen] = useState(true)
+  const toggleSeen = () => {
+    console.log('SEEN:'+seen)
+    setSeen(!seen)
+  };
+  console.log("default seen: "+seen)
 
   return (
     <div>
       <div className="App">
+        <div className="App-header">
+          <div className="App-header-main">Hello World!</div>
+          <div className="App-header-instructions">Use ↑ and ↓ to move!</div>
+        </div>
         <div className="main">
-          <div className="App-header">
-            <div className="App-header-main">Hello World!</div>
-            <div className="App-header-instructions">Use ↑ and ↓ to move!</div>
-          </div>
-          <NewFlashCard />
-          <FlashCard qn={qnas[0].qn} ans={qnas[0].ans} date={qnas[0].date} />
-          <FlashCard qn={qnas[1].qn} ans={qnas[1].ans} date={qnas[1].date} />
-          <FlashCard qn={qnas[2].qn} ans={qnas[2].ans} date={qnas[2].date} />
+          <MainPage>
+            <FlashCard qn={qnas[0].qn} ans={qnas[0].ans} date={qnas[0].date} />
+            <FlashCard qn={qnas[1].qn} ans={qnas[1].ans} date={qnas[1].date} />
+            <FlashCard qn={qnas[2].qn} ans={qnas[2].ans} date={qnas[2].date} />
+          </MainPage>
+          <BottomBar onClick={toggleSeen}/>
+          {console.log('seen right now: '+ seen)}
+          {seen ? <NewFlashCard onAddFlashCard={addFlashCardHandler} toggle={toggleSeen} /> : null}
         </div>
       </div>
-      <BottomBar />
     </div>
   );
 };

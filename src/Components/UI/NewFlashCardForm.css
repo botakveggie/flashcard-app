@@ -1,16 +1,32 @@
+* {
+  font-family: inherit;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+  margin-bottom: 2rem;
+}
+
 .form__controls {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  /* flex-wrap: wrap; */
   gap: 1rem;
   margin-bottom: 1rem;
+  font-family: inherit;
   text-align: left;
-
 }
 
 .form__control label {
   font-weight: bold;
   margin-bottom: 0.5rem;
+  font-family: inherit;
   display: block;
+  width: 200px;
 }
 
 .form__control input {
@@ -19,10 +35,16 @@
   border-radius: 6px;
   border: 1px solid #ccc;
   width: 20rem;
+  font-family: inherit;
   max-width: 100%;
 }
 
 .new-flashcard__actions {
+  font-family: inherit;
   text-align: right;
 }
 
+label {
+  font-family: inherit;
+  width: 400px;
+}

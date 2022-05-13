@@ -14,8 +14,8 @@ h1 {text-align: center}
 .main {
     
     height: 100vh;
-    overflow-y: scroll;
-    scroll-snap-type: y mandatory;
+    /* overflow-y: scroll;
+    scroll-snap-type: y mandatory; */
 }
 
 section {
