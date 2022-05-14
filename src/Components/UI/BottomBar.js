@@ -4,7 +4,6 @@ import "./BottomBar.css";
 
 const BottomBar = (props) => {
   const togglebutt = () => {
-    console.log('SENENENENENEEN');
     props.onClick();
   }
   return (

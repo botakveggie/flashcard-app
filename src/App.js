@@ -5,7 +5,7 @@ import { Component, useState } from "react";
 /* React Imports */
 import FlashCard from "./Components/FlashCard/FlashCard";
 import BottomBar from "./Components/UI/BottomBar";
-import NewFlashCard from "./Components/UI/NewFlashCard";
+import NewFlashCard from "./Components/NewFlashCard/NewFlashCard";
 import MainPage from "./Components/UI/MainPage";
 
 /* Main App */
@@ -35,10 +35,8 @@ const App = () => {
   };
   const [seen, setSeen] = useState(true)
   const toggleSeen = () => {
-    console.log('SEEN:'+seen)
     setSeen(!seen)
   };
-  console.log("default seen: "+seen)
 
   return (
     <div>
@@ -54,7 +52,6 @@ const App = () => {
             <FlashCard qn={qnas[2].qn} ans={qnas[2].ans} date={qnas[2].date} />
           </MainPage>
           <BottomBar onClick={toggleSeen}/>
-          {console.log('seen right now: '+ seen)}
           {seen ? <NewFlashCard onAddFlashCard={addFlashCardHandler} toggle={toggleSeen} /> : null}
         </div>
       </div>

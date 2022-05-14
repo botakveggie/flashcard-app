@@ -40,11 +40,21 @@ form {
 }
 
 .new-flashcard__actions {
+  display: flex;
+  /* flex-direction: column; */
+  justify-items: space-between;
   font-family: inherit;
   text-align: right;
+
 }
 
 label {
   font-family: inherit;
   width: 400px;
+}
+
+.buttons {
+  margin: 1rem 1rem 1rem 1rem;
+  padding: .5rem 1rem .5rem 1rem;
+  border-radius: 5px;
 }

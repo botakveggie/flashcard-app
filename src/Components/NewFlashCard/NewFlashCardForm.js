@@ -1,6 +1,7 @@
 import { useState } from "react";
-import BlueButton from "./BlueButton";
+import BlueButton from "../UI/BlueButton";
 import "./NewFlashCardForm.css";
+import RedButton from "../UI/RedButton";
 
 const NewFlashCardForm = (props) => {
   const [enteredQuestion, setEnteredQuestion] = useState("");
@@ -41,7 +42,8 @@ const NewFlashCardForm = (props) => {
         </div>
       </div>
       <div className="new-flashcard__actions">
-        <BlueButton type="submit">Add FlashCard</BlueButton>
+        <BlueButton className='buttons'  type="submit" buttonName='Add FlashCard' />
+        <RedButton  className='buttons' onClick={props.onCancel} buttonName='Cancel'/>
       </div>
     </form>
   );

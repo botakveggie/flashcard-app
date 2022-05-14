@@ -15,13 +15,12 @@ const NewFlashCard = (props) => {
 
   const clickHandler = () => {
     props.toggle();
-    console.log()
+    console.log('bruh')
   }
 
   return (
     <Card className="new-flashcard">
-      <NewFlashCardForm onSaveFormData = {saveFormDataHandler}/>
-      <button onClick={clickHandler}>cancel</button>
+      <NewFlashCardForm onSaveFormData = {saveFormDataHandler} onCancel={clickHandler}/>
     </Card>
   );
 };
