@@ -1,7 +1,7 @@
 .flash-card {
   display: flex;
   flex-direction: column;
-  background-color: #EEE;
+  background-color: #eee;
   color: #000;
   align-items: center;
   scroll-snap-align: center;
@@ -9,12 +9,12 @@
   max-width: 600px;
   /* height: 30%; */
   /* min-height: 18rem; */
-  padding: 1.5rem 1rem;
+  /* padding: 1.5rem 1rem; */
   margin: auto;
   margin-top: 200px;
   margin-bottom: 200px;
   position: relative;
-  border: 8px solid #9C3848 ;
+  border: 8px solid #9c3848;
   box-shadow: 0.5rem 0.5rem 0 black;
 }
 
@@ -31,15 +31,29 @@ h2 {
 }
 
 .fun-button {
-  background-color: #A7BED3;
+  background-color: #a7bed3;
   box-shadow: inset 0 0 1px 0 #074697;
-  transition: all ease-out .2s;
-  padding: .1rem .5rem .1rem .5rem;
+  transition: all ease-out 0.2s;
+  padding: 0.1rem 0.5rem 0.1rem 0.5rem;
   margin-top: 2rem;
   cursor: pointer;
 }
 
 .fun-button:hover {
   box-shadow: inset 0 0 10rem 0 #074697;
-  color: #FFFFFF;
+  color: #ffffff;
+}
+
+.topbuttons {
+  display: flex;
+  align-self: flex-end;
+}
+
+.close-flash {
+  align-self: flex-end;
+  width: 35px;
+  height: 35px;
+  font-size: 30px;
+  align-items: center;
+  justify-content: center;
 }

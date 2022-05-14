@@ -30,7 +30,7 @@ const NewFlashCardForm = (props) => {
   // console.log("new form")
   return (
     <form onSubmit={submitHandler}>
-      <h1>New FlashCard! 😊 </h1>
+      <div className="title">Add a new flashcard</div>
       <div className="form__controls">
         <div className="form__control">
           {/* <label>Question</label> */}
