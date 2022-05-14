@@ -14,8 +14,8 @@ const sentences = ['fun button', 'are you having fun!!!', 'hahaha stop tickling 
   }
   return (
     <Card className="flash-card">
-      <h2>Question: {props.qn}</h2>
-      <Answer answer={props.ans} />
+      <h2>Question: {props.question}</h2>
+      <Answer answer={props.answer} />
       <BlueButton onClick={clickHandler} className='fun-button'>{funbutton}</BlueButton>
       <div className="date-added">{props.date.toDateString()}</div>
     </Card>
