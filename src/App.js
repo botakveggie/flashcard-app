@@ -68,17 +68,14 @@ const App = () => {
           <div className="App-header-main">Hello World!</div>
           <div className="App-header-instructions">Use ↑ and ↓ to move!</div>
         </div>
-        <div
-          className="main"
-          onKeyDown={keydownHandler}
-        >
-          {seen ? (
+        <div className="main" onKeyDown={keydownHandler}>
+          {seen && (
             <NewFlashCard
               onAddFlashCard={addFlashCardHandler}
               onKeyDown={keydownHandler}
               toggle={toggleSeen}
             />
-          ) : null}
+          )}
           <MainPage items={qnas} onKeyDown={keydownHandler} />
           <BottomBar onClick={toggleSeen} onKeyDown={keydownHandler} />
         </div>
