@@ -33,13 +33,17 @@ const NewFlashCardForm = (props) => {
       <h1>New FlashCard! 😊 </h1>
       <div className="form__controls">
         <div className="form__control">
-          <label>Question</label>
-          <input type="text" value={enteredQuestion} onChange={questionChangeHandler} />
+          {/* <label>Question</label> */}
+          <input type="text" value={enteredQuestion} 
+          onChange={questionChangeHandler} 
+          placeholder='Question' />
         </div>
         <div className="form__control">
-          <label>Answer</label>
-          <input type="text" value={enteredAnswer} onChange={answerChangeHandler} />
-        </div>
+          {/* <label>Answer</label> */}
+          <input type="text" value={enteredAnswer} 
+          onChange={answerChangeHandler} 
+          placeholder='Answer' />
+          </div>
       </div>
       <div className="new-flashcard__actions">
         <BlueButton className='buttons'  type="submit" buttonName='Add FlashCard' />

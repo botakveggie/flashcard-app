@@ -33,7 +33,7 @@ const App = () => {
   const addFlashCardHandler = (flashCardData) => {
     console.log(flashCardData);
   };
-  const [seen, setSeen] = useState(true)
+  const [seen, setSeen] = useState(false)
   const toggleSeen = () => {
     setSeen(!seen)
   };

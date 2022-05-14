@@ -24,7 +24,10 @@
 }
 
 .bottom-bar-element {
-	width: 40%;
+    font-size: large;
+    font-weight: 800;
+	width: 450px;
+    height: 10%;
 	display: inline-block;
 	text-align: center;
 	padding-top: 16px;
