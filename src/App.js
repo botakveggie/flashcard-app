@@ -42,11 +42,17 @@ const App = () => {
     setSeen(!seen);
   };
 
-  const ESCcloseHandler = (event) => {
+  const keydownHandler = (event) => {
     if (event.keyCode == 27) {
       //window.close();
-      // console.log("close the window...");
+      console.log("close the window...");
       setSeen(false);
+    } 
+    if (event.keyCode == 67) {
+      setSeen(!seen);
+    } 
+    if (event.keyCode == 46) {
+      console.log('sorry, delete not implemented yet')
     }
   };
 
@@ -58,12 +64,12 @@ const App = () => {
           <div className="App-header-instructions">Use ↑ and ↓ to move!</div>
         </div>
         <div className="main">
-          <MainPage items={qnas} />
-          <BottomBar onClick={toggleSeen} onKeyDown={ESCcloseHandler} />
+          <MainPage items={qnas} onKeyDown={keydownHandler} />
+          <BottomBar onClick={toggleSeen} onKeyDown={keydownHandler} />
           {seen ? (
             <NewFlashCard
               onAddFlashCard={addFlashCardHandler}
-              onKeyDown={ESCcloseHandler}
+              onKeyDown={keydownHandler}
               toggle={toggleSeen}
             />
           ) : null}
