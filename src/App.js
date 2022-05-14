@@ -42,6 +42,14 @@ const App = () => {
     setSeen(!seen);
   };
 
+  const ESCcloseHandler = (event) => {
+    if (event.keyCode == 27) {
+      //window.close();
+      // console.log("close the window...");
+      setSeen(false);
+    }
+  };
+
   return (
     <div>
       <div className="App">
@@ -51,10 +59,11 @@ const App = () => {
         </div>
         <div className="main">
           <MainPage items={qnas} />
-          <BottomBar onClick={toggleSeen} />
+          <BottomBar onClick={toggleSeen} onKeyDown={ESCcloseHandler} />
           {seen ? (
             <NewFlashCard
               onAddFlashCard={addFlashCardHandler}
+              onKeyDown={ESCcloseHandler}
               toggle={toggleSeen}
             />
           ) : null}

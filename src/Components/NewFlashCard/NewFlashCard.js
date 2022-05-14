@@ -3,6 +3,7 @@ import NewFlashCardForm from "./NewFlashCardForm";
 import Card from "../FlashCard/Card";
 
 const NewFlashCard = (props) => {
+  const {onAddFlashCard, toggle, ...other} = props;
   const saveFormDataHandler = (enteredFormData) => {
     
     const formData = {
@@ -10,16 +11,16 @@ const NewFlashCard = (props) => {
       id: Math.random().toString()
     };
     // console.log(formData);
-    props.onAddFlashCard(formData);
+    onAddFlashCard(formData);
   }
 
   const clickHandler = () => {
-    props.toggle();
+    toggle();
     console.log('bruh')
   }
 
   return (
-    <Card className="new-flashcard">
+    <Card {...other} className="new-flashcard">
       <NewFlashCardForm onSaveFormData = {saveFormDataHandler} onCancel={clickHandler}/>
     </Card>
   );
