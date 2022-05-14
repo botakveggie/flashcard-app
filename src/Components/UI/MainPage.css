@@ -1,5 +1,5 @@
 .MainPage {
-    overflow:hidden;
+    overflow:scroll;
     font-family: inherit;
     scroll-behavior: smooth;
     scroll-snap-type: y mandatory;

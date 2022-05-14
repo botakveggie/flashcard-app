@@ -1,5 +1,5 @@
 import "./App.css";
-import { Component, useState } from "react";
+import { useState } from "react";
 
 /* React Imports */
 import BottomBar from "./Components/UI/BottomBar";
@@ -43,29 +43,35 @@ const App = () => {
   };
 
   const keydownHandler = (event) => {
-    if (event.keyCode == 27) {
-      //window.close();
+    if (event.keyCode === 27) {
+      // keyCode for `Esc` 27
       console.log("close the window...");
       setSeen(false);
-    } 
-    if (event.keyCode == 67) {
+    }
+    if (event.keyCode === 67) {
+      // keyCode for `C` 67
       setSeen(!seen);
-    } 
-    if (event.keyCode == 46) {
-      console.log('sorry, delete not implemented yet')
+    }
+    if (event.keyCode === 46) {
+      // keyCode for `Del` 46
+      console.log("sorry, delete not implemented yet");
     }
   };
 
+  const announceClick = () => {
+    console.log("you have clicked the mouse");
+  };
   return (
-    <div>
-      <div className="App">
+    <div onClick={announceClick} onKeyDown={keydownHandler}>
+      <div className="App" onKeyDown={keydownHandler}>
         <div className="App-header">
           <div className="App-header-main">Hello World!</div>
           <div className="App-header-instructions">Use ↑ and ↓ to move!</div>
         </div>
-        <div className="main">
-          <MainPage items={qnas} onKeyDown={keydownHandler} />
-          <BottomBar onClick={toggleSeen} onKeyDown={keydownHandler} />
+        <div
+          className="main"
+          onKeyDown={keydownHandler}
+        >
           {seen ? (
             <NewFlashCard
               onAddFlashCard={addFlashCardHandler}
@@ -73,6 +79,8 @@ const App = () => {
               toggle={toggleSeen}
             />
           ) : null}
+          <MainPage items={qnas} onKeyDown={keydownHandler} />
+          <BottomBar onClick={toggleSeen} onKeyDown={keydownHandler} />
         </div>
       </div>
     </div>
