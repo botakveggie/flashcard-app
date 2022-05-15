@@ -2,7 +2,7 @@ import "./MainPage.css";
 import FlashCard from "../FlashCard/FlashCard";
 
 const MainPage = (props) => {
-  var { children, items, ...other } = props;
+  var { children, items, onDelFlashCard, ...other } = props;
   const qnas = items;
 
   return (
@@ -13,6 +13,8 @@ const MainPage = (props) => {
           answer={flashcard.answer}
           date={flashcard.date}
           key={flashcard.id}
+          id={flashcard.id}
+          onDel={onDelFlashCard}
         />
       ))}
       {/* <FlashCard qn={qnas[0].qn} ans={qnas[0].ans} date={qnas[0].date} />

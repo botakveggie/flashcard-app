@@ -1,4 +1,4 @@
-import "./App.css";
+import styles from "./App.module.css";
 import { useState } from "react";
 
 /* React Imports */
@@ -30,6 +30,7 @@ const App = () => {
   ];
 
   const [qnas, setQnas] = useState(INITIAL_QNAS);
+  const [seen, setSeen] = useState(false);
 
   const addFlashCardHandler = (flashCardData) => {
     setQnas((prevQnas) => {
@@ -37,12 +38,20 @@ const App = () => {
       return [flashCardData, ...prevQnas];
     });
   };
-  const [seen, setSeen] = useState(false);
+  const delFlashCardHandler = (removeId) => {
+    console.log('removing from app.js: '+ removeId);
+    setQnas((prevQnas) => {
+      return prevQnas.filter((obj) => obj.id !== removeId);
+    });
+  };
+
   const toggleSeen = () => {
+    "Function to toggle visibility of New FlashCard UI";
     setSeen(!seen);
   };
 
   const keydownHandler = (event) => {
+    "Function to handle keystroke events for shortcuts";
     if (event.keyCode === 27) {
       // keyCode for `Esc` 27
       console.log("close the window...");
@@ -63,12 +72,14 @@ const App = () => {
   };
   return (
     <div onClick={announceClick} onKeyDown={keydownHandler}>
-      <div className="App" onKeyDown={keydownHandler}>
-        <div className="App-header">
-          <div className="App-header-main">Hello World!</div>
-          <div className="App-header-instructions">Use ↑ and ↓ to move!</div>
+      <div className={styles.App} onKeyDown={keydownHandler}>
+        <div className={styles.AppHeader}>
+          <div className={styles.AppHeaderMain}>FlashCard</div>
+          <div className={styles.AppHeaderInstructions}>
+            Use ↑ and ↓ to move!
+          </div>
         </div>
-        <div className="main" onKeyDown={keydownHandler}>
+        <div className={styles.main} onKeyDown={keydownHandler}>
           {seen && (
             <NewFlashCard
               onAddFlashCard={addFlashCardHandler}
@@ -76,7 +87,7 @@ const App = () => {
               toggle={toggleSeen}
             />
           )}
-          <MainPage items={qnas} onKeyDown={keydownHandler} />
+          <MainPage items={qnas} onKeyDown={keydownHandler} onDelFlashCard={delFlashCardHandler} />
           <BottomBar onClick={toggleSeen} onKeyDown={keydownHandler} />
         </div>
       </div>

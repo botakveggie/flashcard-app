@@ -1,11 +1,11 @@
-import "./Answer.css";
+import styles from "./Answer.module.css";
 import Card from "./Card";
 
 const Answer = (props) => {
   return (
-    <Card className="answer-box">
+    <Card className={styles.answerBox}>
       <h2>Answer: </h2>
-      <div className="answer">{props.answer}</div>
+      <div className={styles.answer}>{props.answer}</div>
     </Card>
   );
 }
