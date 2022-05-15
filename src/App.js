@@ -50,7 +50,7 @@ const App = () => {
     }
     if (event.keyCode === 67) {
       // keyCode for `C` 67
-      setSeen(!seen);
+      setSeen(true);
     }
     if (event.keyCode === 46) {
       // keyCode for `Del` 46
