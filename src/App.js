@@ -33,13 +33,15 @@ const App = () => {
   const [seen, setSeen] = useState(false);
 
   const addFlashCardHandler = (flashCardData) => {
+    "Adds new flashcard data into array";
     setQnas((prevQnas) => {
       console.log(flashCardData);
       return [flashCardData, ...prevQnas];
     });
   };
   const delFlashCardHandler = (removeId) => {
-    console.log('removing from app.js: '+ removeId);
+    "Removes flashcard data from array";
+    console.log("removing from app.js: " + removeId);
     setQnas((prevQnas) => {
       return prevQnas.filter((obj) => obj.id !== removeId);
     });
@@ -80,13 +82,17 @@ const App = () => {
           </div>
         </div>
         <div className={styles.main} onKeyDown={keydownHandler}>
-          {seen && (
+          {seen ? (
             <NewFlashCard
               onAddFlashCard={addFlashCardHandler}
               toggle={toggleSeen}
             />
-          )}
-          <MainPage items={qnas} onKeyDown={keydownHandler} onDelFlashCard={delFlashCardHandler} />
+          ) : null}
+          <MainPage
+            items={qnas}
+            onKeyDown={keydownHandler}
+            onDelFlashCard={delFlashCardHandler}
+          />
           <BottomBar onClick={toggleSeen} onKeyDown={keydownHandler} />
         </div>
       </div>

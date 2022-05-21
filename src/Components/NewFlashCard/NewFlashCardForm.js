@@ -41,6 +41,7 @@ const NewFlashCardForm = (props) => {
       question: enteredQuestion,
       answer: enteredAnswer,
       date: new Date(),
+      id: Math.random().toString(),
     };
     // resets boxes and sends object up through a prop
     props.onSaveFormData(flashcardData);
