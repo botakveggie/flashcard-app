@@ -1,29 +1,19 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import BlueButton from "../UI/BlueButton";
 import styles from "./NewFlashCardForm.module.css";
 import RedButton from "../UI/RedButton";
 
 const NewFlashCardForm = (props) => {
-  const [enteredQuestion, setEnteredQuestion] = useState("");
-  const [enteredAnswer, setEnteredAnswer] = useState("");
+  const enteredQuestionRef = useRef();
+  const enteredAnswerRef = useRef();
   const [questionEmpty, setQuestionEmpty] = useState(false);
   const [answerEmpty, setAnswerEmpty] = useState(false);
 
-  const questionChangeHandler = (event) => {
-    setEnteredQuestion(event.target.value);
-    if (enteredQuestion.trim().length > 0) {
-      setQuestionEmpty(false);
-    }
-  };
-  const answerChangeHandler = (event) => {
-    setEnteredAnswer(event.target.value);
-    if (enteredAnswer.trim().length > 0) {
-      setAnswerEmpty(false);
-    }
-  };
-
   const submitHandler = (event) => {
     event.preventDefault();
+    const enteredQuestion = enteredQuestionRef.current.value;
+    const enteredAnswer = enteredAnswerRef.current.value;
+    // upon form submission, take the values stored by the reference pointers as the entered qna
     // Prevents adding flashcard if question or anwer is missing in form
     if ((enteredQuestion.trim().length === 0) && (enteredAnswer.trim().length === 0)) {
       setQuestionEmpty(true);
@@ -45,8 +35,8 @@ const NewFlashCardForm = (props) => {
     };
     // resets boxes and sends object up through a prop
     props.onSaveFormData(flashcardData);
-    setEnteredQuestion("");
-    setEnteredAnswer("");
+    enteredAnswerRef.event.value = '';
+    enteredQuestionRef.event.value = '';
   };
 
   // console.log("new form")
@@ -61,10 +51,9 @@ const NewFlashCardForm = (props) => {
         >
           <input
             type="text"
-            value={enteredQuestion}
             className={questionEmpty && styles.invalid}
-            onChange={questionChangeHandler}
-            placeholder="Question"
+            placeholder='Question'
+            ref={enteredQuestionRef}
           />
         </div>
         <div
@@ -74,9 +63,8 @@ const NewFlashCardForm = (props) => {
         >
           <input
             type="text"
-            value={enteredAnswer}
-            onChange={answerChangeHandler}
             placeholder="Answer"
+            ref={enteredAnswerRef}
           />
         </div>
       </div>
