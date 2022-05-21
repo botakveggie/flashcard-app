@@ -7,19 +7,20 @@ const MainPage = (props) => {
 
   return (
     <div className="MainPage" {...other}>
-      {qnas.map((flashcard) => (
-        <FlashCard
-          question={flashcard.question}
-          answer={flashcard.answer}
-          date={flashcard.date}
-          key={flashcard.id}
-          id={flashcard.id}
-          onDel={onDelFlashCard}
-        />
-      ))}
-      {/* <FlashCard qn={qnas[0].qn} ans={qnas[0].ans} date={qnas[0].date} />
-      <FlashCard qn={qnas[1].qn} ans={qnas[1].ans} date={qnas[1].date} />
-      <FlashCard qn={qnas[2].qn} ans={qnas[2].ans} date={qnas[2].date} /> */}
+      {qnas.length === 0 ? (
+        <h1 className="empty">No flashcards found</h1>
+      ) : (
+        qnas.map((flashcard) => (
+          <FlashCard
+            question={flashcard.question}
+            answer={flashcard.answer}
+            date={flashcard.date}
+            key={flashcard.id}
+            id={flashcard.id}
+            onDel={onDelFlashCard}
+          />
+        ))
+      )}
     </div>
   );
 };

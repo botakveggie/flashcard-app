@@ -83,7 +83,6 @@ const App = () => {
           {seen && (
             <NewFlashCard
               onAddFlashCard={addFlashCardHandler}
-              onKeyDown={keydownHandler}
               toggle={toggleSeen}
             />
           )}

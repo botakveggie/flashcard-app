@@ -1,13 +1,19 @@
 .MainPage {
-    overflow:scroll;
-    font-family: inherit;
-    scroll-behavior: smooth;
-    scroll-snap-type: y mandatory;
-    scroll-snap-align: start;
-    height: 100vh
-    /* border:#282c34 solid 1rem;   */
-  }
-/* 
-* {
-    font-family: inherit;
-} */
+  overflow: scroll;
+  font-family: inherit;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  scroll-snap-align: start;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  /* border:#282c34 solid 1rem;   */
+}
+
+.empty {
+  text-align: center;
+  position: fixed;
+  top: 40%;
+  left:40%;
+  justify-items: center;
+}
