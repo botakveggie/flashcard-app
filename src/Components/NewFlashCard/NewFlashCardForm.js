@@ -35,8 +35,9 @@ const NewFlashCardForm = (props) => {
     };
     // resets boxes and sends object up through a prop
     props.onSaveFormData(flashcardData);
-    enteredAnswerRef.event.value = '';
-    enteredQuestionRef.event.value = '';
+    enteredAnswerRef.current.value = '';
+    enteredQuestionRef.current.value = '';
+    props.onCancel();
   };
 
   // console.log("new form")
